@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detector de Tamanho de Tela</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS personalizado -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Largura da Tela</h5>
+                        <p class="card-text"><span id="larguraTela"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Altura da Tela</h5>
+                        <p class="card-text"><span id="alturaTela"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para atualizar o tamanho da tela
+        function atualizarTamanhoTela() {
+            const largura = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const altura = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            document.getElementById('larguraTela').textContent = largura + ' pixels';
+            document.getElementById('alturaTela').textContent = altura + ' pixels';
+        }
+
+        // Chama a função inicialmente e sempre que a janela for redimensionada
+        window.addEventListener('resize', atualizarTamanhoTela);
+        atualizarTamanhoTela();
+    </script>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
